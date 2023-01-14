@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-2ad3fe0f.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MBBK robot</title>
+    
+    <script type="module" crossorigin src="/assets/index-155a6dfa.js"></script>
+    <link rel="stylesheet" href="/assets/index-985ecec7.css">
+  </head>
+  <style>
+      #popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #53535b;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+}
+.red-btn{
+    background-color: white;
+}
+
+  </style>
+  <div id="popup">
+  <div class="popup-content">
+    Si le bot ne vous répond au bout de 15 secondes, renvoyer de nouveau 
+    <button onclick="closePopup()" class="red-btn">Ok compris :)</button>
+
+  </div>
+</div>
+<script>
+window.onload = function() {
+  document.getElementById("popup").style.display = "block";
+}
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+</script>
+  <!-- Splashscreen script by @MBBKLECREATEUR -->
+  <style>
+.max-span{color: white}
+.max-splash-wrap{position:fixed;height:100%;width:100%;top:0;left:0;right:0;bottom:0;background:#4c4c6e;z-index:9999999}
+.max-splash-wrap .max-splash-screen{position:relative;top:50%;left:50%;display:flex;background:transparent;flex-direction:column;align-items:center;width:100%;transform: translate(-50% , -50%) scale(0.97);opacity:0}
+.max-splash-wrap .max-splash-screen img{width:150px;height:150px}
+.max-splash-wrap .max-splash-screen span{text-align:center;font-size:15px;font-weight:600;margin:20px;font-family:Noto Sans', sans-serif}
+</style>
+<div class='max-splash-wrap'>
+<div class='max-splash-screen'>
+<img alt="Max" src="/assets/bot-61bdb6bf.svg"/>
+<span class="max-span">MBBK robot</span>
+</div>  
+</div>
+
+<script>
+//<![CDATA[
+var splashSession = sessionStorage.getItem('splashSession');
+document.addEventListener('DOMContentLoaded',function(){
+if (splashSession === null) {
+document.querySelector('.max-splash-screen').style.opacity ='1';
+splashSession = sessionStorage.setItem('splashSession',true);
+setTimeout(function(){
+document.querySelector('.max-splash-wrap').style.display ='none';
+}, 5000);
+} else{
+document.querySelector('.max-splash-wrap').style.display ='none';
+}});
+//]]> 
+</script>
+  <body>
+    <div id="app">
+      <h1>MBBK robot<img height="34px" src="/assets/bot-61bdb6bf.svg" /></h1>
+      <div id="chat_container"></div>
+      <form>
+        <textarea
+          name="prompt"
+          rows="1"
+          cols="1"
+          placeholder="Demander à MBBK robot..."
+        ></textarea>
+        <button type="submit">
+          <img src="/assets/send-155d1383.svg" alt="send btn" />
+        </button>
+      </form>
+    </div>
+
+    
+  </body>
+</html>
